@@ -15,7 +15,7 @@
     <author href="http://phonegap.com" email="support@phonegap.com">
         PhoneGap Team
     </author>
-
+<preference name="orientation"                value="default" />
     <!--
         If you do not want any permissions to be added to your app, add the
         following tag to your config.xml; you will still have the INTERNET
@@ -37,8 +37,10 @@
     <plugin name="cordova-plugin-device" />
     <plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-android-fingerprint-auth" />
+    <plugin name="cordova-plugin-device-motion" />
+    <plugin name="cordova-plugin-device-orientation" />
     
-
+<icon src="logo/icon.png" />
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins -->
