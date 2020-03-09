@@ -39,10 +39,10 @@
             if (_fingerResult.withFingerprint) {
               console.log("Successfully encrypted credentials.");
               console.log("Encrypted credentials: " + result.token);
-              window.location.href = "index2.html";
+              window.location.href = "index3.html";
             } else if (_fingerResult.withBackup) {
               console.log("Authenticated with backup password");
-              window.location.href = "index3.html";
+              window.location.href = "index.html";
             }
             // Error callback
           }, function(err) {
