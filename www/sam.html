@@ -3,27 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>test camera</title>
-    <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        function camSuccess(imgData){
-          $("#img_camPH").attr("src", imgData);
-        }
-        function camError(error){
-          alert(error);
-        }
-        function accesscamera(){
-          var option = {
-            destinationType: Camera.DestinationType.FILE_URI,
-            sourceType: Camera.PictureSourceType.CAMERA
-          };
-          navigator.camera.getPicture(camSuccess, camError, option)
-        }
-        $(""#btn_camera").on("click",accesscamera)
-      });
-    </script>
     <link rel="stylesheet" href="js/jquery.mobile-1.4.5.css">
   </head>
   <body>
@@ -32,9 +13,48 @@
           <h1>Camera</h1>
         </div>
         <div class="ui-content">
-          <button type="button" id="btn_camera" name="button"></button>
-          <img src="" id="img_camPH" alt="">
+          <input type="button" value="Take a Picture" onclick="takePhoto();">
+          <input type="button" name="" onclick="spec();" value="Go to Spec">
+          <div id="imageContainer"></div>
+          <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Device is Ready</p>
+          </div>
         </div>
       </div>
+      <script type="text/javascript">
+          app.initialize();
+      </script>
+  <script type="text/javascript" charset="utf-8">
+      function onBodyLoad() {
+      document.addEventListener("deviceready", onDeviceReady,
+      false);
+      }
+      function onDeviceReady() {
+      navigator.notification.alert("onDeviceReady");
+      }
+      function takePhoto() {
+      navigator.camera.getPicture(onCameraSuccess,
+      onCameraError,
+      {quality : 50,
+      destinationType : Camera.DestinationType.FILE_URI});
+      }
+      function spec(){
+        window.location.herf = "spec.html";
+      }
+      function onCameraSuccess(imageURL) {
+      //Get a handle to the image container div
+      ic = document.getElementById('imageContainer');
+      //Then write an image tag out to the div using the
+      //URL we received from the camera application.
+      ic.innerHTML = '<img src="' + imageURL +
+      '" width="100%" />';
+      }
+      function onCameraError(e) {
+      console.log(e);
+      navigator.notification.alert("onCameraError: " + e +
+      " (" + e.code + ")");
+      }
+  </script>
   </body>
 </html>
