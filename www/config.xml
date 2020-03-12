@@ -29,7 +29,7 @@
     -->
 
     <!-- Plugins -->
- <content src="index.html" />
+ <content src="sam.html" />
     <!-- Core plugins -->
     <plugin name="cordova-plugin-battery-status" />
     <plugin name="cordova-plugin-camera" spec="~4.1.0" />
