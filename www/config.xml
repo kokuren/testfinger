@@ -31,7 +31,7 @@
     <!-- Plugins -->
  <content src="index.html" />
     <!-- Core plugins -->
-  <!--<plugin name="cordova-plugin-battery-status"/>
+ <plugin name="cordova-plugin-battery-status"/>
     <plugin name="cordova-plugin-camera" />
     <plugin name="cordova-plugin-media-capture" />
     <plugin name="cordova-plugin-device" />
@@ -41,8 +41,8 @@
     <plugin name="cordova-plugin-globalization"  />
     <plugin name="cordova-plugin-inappbrowser"  />
     <plugin name="cordova-plugin-network-information" />
-    <plugin name="cordova-plugin-vibration"/>-->
-   <icon src="logo/icon.png" />
+    <plugin name="cordova-plugin-vibration"/>
+  
     
 <!--<icon src="logo/icon.png" />-->
 
